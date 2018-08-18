@@ -4,23 +4,13 @@
 #
 Name     : R-geiger
 Version  : 2.0.6
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/geiger_2.0.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/geiger_2.0.6.tar.gz
 Summary  : Analysis of Evolutionary Diversification
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-geiger-lib
-Requires: R-TreeSim
-Requires: R-ape
-Requires: R-coda
-Requires: R-colorspace
-Requires: R-deSolve
-Requires: R-mvtnorm
-Requires: R-ncbit
-Requires: R-phytools
-Requires: R-subplex
-BuildRequires : R-TreeSim
 BuildRequires : R-ape
 BuildRequires : R-coda
 BuildRequires : R-colorspace
@@ -51,11 +41,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534606154
+export SOURCE_DATE_EPOCH=1534606775
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1534606154
+export SOURCE_DATE_EPOCH=1534606775
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -84,15 +74,6 @@ echo "CXXFLAGS = $CXXFLAGS -ftree-vectorize " >> ~/.R/Makevars
 R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} --build  -l %{buildroot}/usr/lib64/R/library geiger
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
-%check
-export LANG=C
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library geiger|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
-
 
 %files
 %defattr(-,root,root,-)
@@ -125,7 +106,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/geiger/help/paths.rds
 /usr/lib64/R/library/geiger/html/00Index.html
 /usr/lib64/R/library/geiger/html/R.css
-/usr/lib64/R/library/geiger/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
