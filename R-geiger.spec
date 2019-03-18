@@ -4,26 +4,22 @@
 #
 Name     : R-geiger
 Version  : 2.0.6.1
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/geiger_2.0.6.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/geiger_2.0.6.1.tar.gz
 Summary  : Analysis of Evolutionary Diversification
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-geiger-lib = %{version}-%{release}
-Requires: R-ape
-Requires: R-coda
-Requires: R-colorspace
-Requires: R-deSolve
-Requires: R-mvtnorm
-Requires: R-ncbit
-Requires: R-subplex
+Requires: R-Rcpp
+BuildRequires : R-Rcpp
 BuildRequires : R-ape
 BuildRequires : R-coda
 BuildRequires : R-colorspace
 BuildRequires : R-deSolve
 BuildRequires : R-mvtnorm
 BuildRequires : R-ncbit
+BuildRequires : R-phytools
 BuildRequires : R-subplex
 BuildRequires : buildreq-R
 
@@ -47,10 +43,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1547653991
+export SOURCE_DATE_EPOCH=1552930890
 
 %install
-export SOURCE_DATE_EPOCH=1547653991
+export SOURCE_DATE_EPOCH=1552930890
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
