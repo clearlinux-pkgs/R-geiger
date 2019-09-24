@@ -4,24 +4,28 @@
 #
 Name     : R-geiger
 Version  : 2.0.6.2
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/geiger_2.0.6.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/geiger_2.0.6.2.tar.gz
 Summary  : Analysis of Evolutionary Diversification
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-geiger-lib = %{version}-%{release}
+Requires: R-Rcpp
 Requires: R-ape
 Requires: R-coda
 Requires: R-colorspace
 Requires: R-deSolve
+Requires: R-digest
 Requires: R-mvtnorm
 Requires: R-ncbit
 Requires: R-subplex
+BuildRequires : R-Rcpp
 BuildRequires : R-ape
 BuildRequires : R-coda
 BuildRequires : R-colorspace
 BuildRequires : R-deSolve
+BuildRequires : R-digest
 BuildRequires : R-mvtnorm
 BuildRequires : R-ncbit
 BuildRequires : R-subplex
@@ -46,13 +50,13 @@ lib components for the R-geiger package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1559664170
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569288553
 
 %install
-export SOURCE_DATE_EPOCH=1559664170
+export SOURCE_DATE_EPOCH=1569288553
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
