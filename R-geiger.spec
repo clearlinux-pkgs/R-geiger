@@ -4,7 +4,7 @@
 #
 Name     : R-geiger
 Version  : 2.0.6.2
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/geiger_2.0.6.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/geiger_2.0.6.2.tar.gz
 Summary  : Analysis of Evolutionary Diversification
@@ -30,6 +30,7 @@ BuildRequires : R-mvtnorm
 BuildRequires : R-ncbit
 BuildRequires : R-subplex
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # Geiger
@@ -51,10 +52,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569288553
+export SOURCE_DATE_EPOCH=1571836416
 
 %install
-export SOURCE_DATE_EPOCH=1569288553
+export SOURCE_DATE_EPOCH=1571836416
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
