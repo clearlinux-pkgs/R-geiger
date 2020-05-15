@@ -4,7 +4,7 @@
 #
 Name     : R-geiger
 Version  : 2.0.6.4
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/geiger_2.0.6.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/geiger_2.0.6.4.tar.gz
 Summary  : Analysis of Evolutionary Diversification
@@ -45,21 +45,22 @@ lib components for the R-geiger package.
 
 %prep
 %setup -q -c -n geiger
+cd %{_builddir}/geiger
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580142025
+export SOURCE_DATE_EPOCH=1589577995
 
 %install
-export SOURCE_DATE_EPOCH=1580142025
+export SOURCE_DATE_EPOCH=1589577995
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
