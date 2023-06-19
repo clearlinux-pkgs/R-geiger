@@ -5,7 +5,7 @@
 #
 Name     : R-geiger
 Version  : 2.0.11
-Release  : 46
+Release  : 47
 URL      : https://cran.r-project.org/src/contrib/geiger_2.0.11.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/geiger_2.0.11.tar.gz
 Summary  : Analysis of Evolutionary Diversification
